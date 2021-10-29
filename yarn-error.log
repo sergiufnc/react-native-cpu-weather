@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.15/libexec/bin/yarn.js add --dev @types/jest
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.15/libexec/bin/yarn.js
 
 PATH: 
-  /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/bin:/Users/serfnc/Library/Android/sdk/emulator:/usr/local/opt/sqlite/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/serfnc/Library/Android/sdk/platform-tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands
+  /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/bin:/Users/serfnc/Library/Android/sdk/emulator:/usr/local/opt/sqlite/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Users/serfnc/Library/Android/sdk/platform-tools:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/serfnc/Sites/react-native-cpu-weather/node_modules/.bin
 
 Yarn version: 
   1.22.15
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  SyntaxError: /Users/serfnc/Sites/react-native-cpu-weather/package.json: Unexpected token ] in JSON at position 535
+  SyntaxError: /Users/serfnc/Sites/react-native-cpu-weather/package.json: Unexpected token } in JSON at position 1183
       at JSON.parse (<anonymous>)
       at /usr/local/Cellar/yarn/1.22.15/libexec/lib/cli.js:1625:59
       at Generator.next (<anonymous>)
@@ -35,7 +35,7 @@ npm manifest:
     "jest": {
       "preset": "jest-expo",
       "transformIgnorePatterns": [
-        "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)",
+        "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)"
       ]
     },
     "dependencies": {
@@ -56,12 +56,13 @@ npm manifest:
       "react-native": "0.64.2",
       "react-native-safe-area-context": "3.3.2",
       "react-native-screens": "~3.8.0",
-      "react-native-web": "0.17.1"
+      "react-native-web": "0.17.1",
     },
     "devDependencies": {
       "@babel/core": "^7.12.9",
       "@testing-library/jest-native": "^4.0.2",
       "@testing-library/react-native": "^8.0.0",
+      "@types/jest": "^27.0.2",
       "@types/react": "~17.0.21",
       "@types/react-native": "~0.64.12",
       "jest-expo": "~43.0.0",
@@ -1899,6 +1900,14 @@ Lockfile:
     dependencies:
       "@types/istanbul-lib-report" "*"
   
+  "@types/jest@^27.0.2":
+    version "27.0.2"
+    resolved "https://registry.yarnpkg.com/@types/jest/-/jest-27.0.2.tgz#ac383c4d4aaddd29bbf2b916d8d105c304a5fcd7"
+    integrity sha512-4dRxkS/AFX0c5XW6IPMNOydLn2tEhNhJV7DnYK+0bjoJZ+QTmfucBlihX7aoEsh/ocYtkLC73UbnBXBXIxsULA==
+    dependencies:
+      jest-diff "^27.0.0"
+      pretty-format "^27.0.0"
+  
   "@types/node@*":
     version "16.11.6"
     resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.6.tgz#6bef7a2a0ad684cf6e90fcfe31cecabd9ce0a3ae"
@@ -3054,6 +3063,11 @@ Lockfile:
     version "26.6.2"
     resolved "https://registry.yarnpkg.com/diff-sequences/-/diff-sequences-26.6.2.tgz#48ba99157de1923412eed41db6b6d4aa9ca7c0b1"
     integrity sha512-Mv/TDa3nZ9sbc5soK+OoA74BsS3mL37yixCvUAQkiuA4Wz6YtwP/K47n2rv2ovzHZvoiQeA5FTQOschKkEwB0Q==
+  
+  diff-sequences@^27.0.6:
+    version "27.0.6"
+    resolved "https://registry.yarnpkg.com/diff-sequences/-/diff-sequences-27.0.6.tgz#3305cb2e55a033924054695cc66019fd7f8e5723"
+    integrity sha512-ag6wfpBFyNXZ0p8pcuIDS//D8H062ZQJ3fzYxjpmeKjnz8W4pekL3AI8VohmyZmsWW2PWaHgjsmqR6L13101VQ==
   
   domexception@^2.0.1:
     version "2.0.1"
@@ -4290,6 +4304,16 @@ Lockfile:
       jest-get-type "^26.3.0"
       pretty-format "^26.6.2"
   
+  jest-diff@^27.0.0:
+    version "27.3.1"
+    resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-27.3.1.tgz#d2775fea15411f5f5aeda2a5e02c2f36440f6d55"
+    integrity sha512-PCeuAH4AWUo2O5+ksW4pL9v5xJAcIKPUPfIhZBcG1RKv/0+dvaWTQK1Nrau8d67dp65fOqbeMdoil+6PedyEPQ==
+    dependencies:
+      chalk "^4.0.0"
+      diff-sequences "^27.0.6"
+      jest-get-type "^27.3.1"
+      pretty-format "^27.3.1"
+  
   jest-docblock@^26.0.0:
     version "26.0.0"
     resolved "https://registry.yarnpkg.com/jest-docblock/-/jest-docblock-26.0.0.tgz#3e2fa20899fc928cb13bd0ff68bd3711a36889b5"
@@ -4358,6 +4382,11 @@ Lockfile:
     version "26.3.0"
     resolved "https://registry.yarnpkg.com/jest-get-type/-/jest-get-type-26.3.0.tgz#e97dc3c3f53c2b406ca7afaed4493b1d099199e0"
     integrity sha512-TpfaviN1R2pQWkIihlfEanwOXK0zcxrKEE4MlU6Tn7keoXdN6/3gK/xl0yEh8DOunn5pOVGKf8hB4R9gVh04ig==
+  
+  jest-get-type@^27.3.1:
+    version "27.3.1"
+    resolved "https://registry.yarnpkg.com/jest-get-type/-/jest-get-type-27.3.1.tgz#a8a2b0a12b50169773099eee60a0e6dd11423eff"
+    integrity sha512-+Ilqi8hgHSAdhlQ3s12CAVNd8H96ZkQBfYoXmArzZnOfAtVAJEiPDBirjByEblvG/4LPJmkL+nBqPO3A1YJAEg==
   
   jest-haste-map@^26.5.2, jest-haste-map@^26.6.2:
     version "26.6.2"
@@ -5837,6 +5866,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
     integrity sha1-u+Z0BseaqFxc/sdm/lc0VV36EnQ=
   
+  osx-temperature-sensor@^1.0.7:
+    version "1.0.7"
+    resolved "https://registry.yarnpkg.com/osx-temperature-sensor/-/osx-temperature-sensor-1.0.7.tgz#5bbbd28bf86dc1d5391cfa7f067f0308807ddae9"
+    integrity sha512-5hijMYtDVmcrR/LTZ8702SZOO2TVt5868KeraD02WyEI+3/YZJI4Cl9fvzCOc5vzizGGjvsfaCKZOKHF+RJ0wA==
+  
   p-each-series@^2.1.0:
     version "2.2.0"
     resolved "https://registry.yarnpkg.com/p-each-series/-/p-each-series-2.2.0.tgz#105ab0357ce72b202a8a8b94933672657b5e2a9a"
@@ -7056,6 +7090,11 @@ Lockfile:
     version "3.2.4"
     resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.2.4.tgz#430637d248ba77e078883951fb9aa0eed7c63fa2"
     integrity sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==
+  
+  systeminformation@^5.9.9:
+    version "5.9.9"
+    resolved "https://registry.yarnpkg.com/systeminformation/-/systeminformation-5.9.9.tgz#aa8234a138363bd988f438fed3273370f79d7e30"
+    integrity sha512-xciy6NKCLfs4dqMD1Tdlo7v1/g0NfdA1EKsIptUQjlcVvpwHyjifAbNOF7ppFezGSMXxYE8me+l2+RlFF4lyTg==
   
   temp-dir@^1.0.0:
     version "1.0.0"
