@@ -1,8 +1,8 @@
 {
   "scripts": {
-    "start": "react-native start",
+    "start": "react-native start  --port=8088",
     "android": "react-native run-android",
-    "ios": "react-native run-ios",
+    "ios": "react-native run-ios --port=8088",
     "web": "expo start --web",
     "eject": "expo eject",
     "test": "jest --watchAll"

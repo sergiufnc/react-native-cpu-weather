@@ -1,14 +1,18 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, NativeModules } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 
+const { CpuModule } = NativeModules;
+
 export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
   React.useEffect(() => {
-
-  }, [])
+    CpuModule.getUsage((value: string) => {
+      console.log(value)
+    })
+  })
 
   return (
     <View style={styles.container}>
