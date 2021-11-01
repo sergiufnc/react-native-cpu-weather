@@ -1,6 +1,14 @@
 import axios from 'axios'
 
-import {OPEN_WEATHER_API_KEY, OPEN_WEATHER_LOCATION} from "@env"
+import {OPEN_WEATHER_API_KEY, OPEN_WEATHER_LOCATION} from "react-native-dotenv"
+
+export const cToF = (celsius: number): number => {
+    return celsius * 9 / 5 + 32
+};
+
+export const fToC = (fahrenheit: number): number => {
+    return (fahrenheit - 32) * 5 / 9
+};
 
 export default function getTemperature(): Promise<number> {
     return new Promise<number>((resolve, reject) => {
@@ -10,11 +18,13 @@ export default function getTemperature(): Promise<number> {
             timeout: 10,
         })
             .then(response => {
-                resolve(response.data)
+                const {main} = response.data;
+                const {temp} = main;
+
+                resolve(fToC(temp));
             })
             .catch(error => {
                 reject(error)
             })
     });
-
 }

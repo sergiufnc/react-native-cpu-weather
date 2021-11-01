@@ -2,7 +2,7 @@ import {Data} from '../../types/state'
 import * as types from '../actionTypes'
 
 export const initialState = {
-    data: <Data[]>[]
+    data: []
 };
 
 export const rootReducer = (state = initialState, action: any) => {
