@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Pressable, Text} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux'
 import {View} from '../components/Themed';
 import {RootTabScreenProps} from '../types';
@@ -13,7 +13,7 @@ import DisplayTemperatures from "../components/DisplayTemperatures";
 const BACKGROUND_FETCH_TASK = 'com.reactnativecpuweather.fetch';
 
 export default function TabOneScreen({navigation}: RootTabScreenProps<'TabOne'>) {
-    const data = useSelector((state: RootState) => state.data)
+    const data = useSelector((root: any) => root.rootReducer.data)
 
     const dispatch = useDispatch()
 
@@ -58,9 +58,15 @@ export default function TabOneScreen({navigation}: RootTabScreenProps<'TabOne'>)
 
     return (
         <View style={styles.container}>
-            {data.map((oneData: Data, index: number) => (
-                <DisplayTemperatures {...oneData} />
+            {(data || []).map((oneData: Data, index: number) => (
+                <DisplayTemperatures key={index} {...oneData} />
             ))}
+
+            <Pressable style={styles.button} onPress={() => {
+                dispatch(addData())
+            }}>
+                <Text style={styles.buttonText}>Add data manually</Text>
+            </Pressable>
         </View>
     );
 }
@@ -70,5 +76,12 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    button: {
+        backgroundColor: '#fff',
+        padding: 20
+    },
+    buttonText: {
+        fontWeight: 'bold'
     }
 });

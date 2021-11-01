@@ -4,7 +4,7 @@ import {View} from './Themed';
 
 export default function DisplayTemperatures({cpu, temperature}: { cpu: number, temperature: number }) {
     return (
-        <View>
+        <View style={styles.container}>
             <Text>CPU Usage: {cpu}%</Text>
             <Text>Weather Temperature: {temperature}</Text>
         </View>
@@ -12,5 +12,7 @@ export default function DisplayTemperatures({cpu, temperature}: { cpu: number, t
 }
 
 const styles = StyleSheet.create({
-
+    container: {
+        backgroundColor: '#fff'
+    }
 });
