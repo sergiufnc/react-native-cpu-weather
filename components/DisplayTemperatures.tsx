@@ -1,13 +1,16 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Text} from 'react-native';
 import {View} from './Themed';
 
-export default function DisplayTemperatures({cpu, weather}: { cpu: number | null, weather: number }) {
+export default function DisplayTemperatures({cpu, temperature}: { cpu: number, temperature: number }) {
     return (
         <View>
-
+            <Text>CPU Usage: {cpu}%</Text>
+            <Text>Weather Temperature: {temperature}</Text>
         </View>
     );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+
+});
